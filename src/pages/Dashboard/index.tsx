@@ -33,7 +33,7 @@ const Dashboard: React.FC = () => {
     event.preventDefault();
 
     if (!newRepo) {
-      setInputError('Digite o autor/nome do repositório');
+      setInputError('Enter the author/repo of the repository');
       return;
     }
 
@@ -46,7 +46,7 @@ const Dashboard: React.FC = () => {
       setNewRepo('');
       setInputError('');
     } catch {
-      setInputError('Erro na busca do repositório');
+      setInputError('Error searching the repository');
     }
   }
   useEffect(() => {
@@ -59,14 +59,14 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <img src={logoImg} />
-      <Title>Explore repositórios no Github</Title>
+      <Title>Explore repositories on Github</Title>
       <Form hasError={!!inputError} onSubmit={handleAddRepositories}>
         <input
           value={newRepo}
           onChange={e => setNewRepo(e.target.value)}
-          placeholder="Digite o nome do repositório"
+          placeholder="Enter the author/name of the repository"
         />
-        <button type="submit">Pesquisar</button>
+        <button type="submit">Search</button>
       </Form>
       {inputError && <Error>{inputError}</Error>}
       <Repositories>
