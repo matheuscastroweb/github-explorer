@@ -33,6 +33,11 @@ Repository
   <img alt="Repository Github Explorer" title="Repository Github Explorer" src="https://res.cloudinary.com/matheuscastroweb/image/upload/v1589060517/github-explorer/details_g1axkf.png" />
 </p>
 <br>
+<p align="center">
+  <a href="https://matheuscastroweb-github-explorer.netlify.app" target="_blank">
+    <img alt="Demo on Netlify" src="https://res.cloudinary.com/matheuscastroweb/image/upload/v1589064071/github-explorer/demo-netlify_xllsnl.png">
+  </a>
+</p>
 
 ## Technologies
 
@@ -68,7 +73,7 @@ $ yarn start
 
 ## License
 
-This project is under the MIT license. See the [LICENSE](https://github.com/matheuscastroweb/github-explorer/blob/master/LICENSE) for more information.
+This project is under the MIT license. See the [LICENSE](https://github.com/matheuscastroweb/github-e/blob/master/LICENSE) for more information.
 
 ---
 
