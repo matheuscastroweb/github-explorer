@@ -6,6 +6,10 @@ import React, {
   useCallback,
 } from 'react';
 
+import { ThemeProvider as Theme } from 'styled-components';
+
+import { lightTheme, darkTheme } from '../styles/theme';
+
 interface ThemeContextData {
   theme: string;
   toogleTheme(): void;
@@ -13,7 +17,7 @@ interface ThemeContextData {
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
-const ThemeProviderApp: React.FC = ({ children }) => {
+const ThemeProvider: React.FC = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const themeStorage = localStorage.getItem('@GithubExplorer:theme');
 
@@ -44,7 +48,9 @@ const ThemeProviderApp: React.FC = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toogleTheme }}>
-      {children}
+      <Theme theme={theme === 'light' ? lightTheme : darkTheme}>
+        {children}
+      </Theme>
     </ThemeContext.Provider>
   );
 };
@@ -59,4 +65,4 @@ function useTheme(): ThemeContextData {
   return context;
 }
 
-export { ThemeProviderApp, useTheme };
+export { ThemeProvider, useTheme };
