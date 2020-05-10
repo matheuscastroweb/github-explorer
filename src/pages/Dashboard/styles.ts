@@ -1,13 +1,60 @@
-import styled, { css } from 'styled-components';
 import { shade } from 'polished';
+import styled, { css } from 'styled-components';
 
 interface FromProps {
   hasError: boolean;
 }
 
+interface Theme {
+  theme: {
+    title: string;
+    error: string;
+    repo: string;
+    title_repo: string;
+    button: string;
+    mode: string;
+  };
+}
+
+export const Header = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #a8a8b3;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #666;
+    }
+  }
+
+  button {
+    width: 150px;
+    height: 30px;
+    background: ${({ theme }: Theme) => theme.mode};
+    border-radius: 5px;
+    border: 0;
+    font-weight: bold;
+    color: ${({ theme }: Theme) => theme.title};
+    transition: background-color 0.2s;
+    -webkit-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: ${({ theme }: Theme) => shade(0.2, theme.mode)};
+    }
+  }
+`;
+
 export const Title = styled.h1`
   font-size: 48px;
-  color: #3a3a3a;
+  color: ${({ theme }: Theme) => theme.title};
   line-height: 56px;
   max-width: 450px;
 
@@ -34,7 +81,7 @@ export const Form = styled.form<FromProps>`
     ${props =>
       props.hasError &&
       css`
-        border-color: #c53030;
+        border-color: ${({ theme }: Theme) => theme.error};
       `}
 
     &::placeholder {
@@ -45,7 +92,7 @@ export const Form = styled.form<FromProps>`
   button {
     width: 210px;
     height: 70px;
-    background: #04d361;
+    background: ${({ theme }: Theme) => theme.button};
     border-radius: 0 5px 5px 0;
     border: 0;
     font-weight: bold;
@@ -60,7 +107,7 @@ export const Form = styled.form<FromProps>`
 
 export const Error = styled.span`
   display: block;
-  color: #c53030;
+  color: ${({ theme }: Theme) => theme.error};
   margin-top: 8px;
 `;
 
@@ -69,7 +116,7 @@ export const Repositories = styled.div`
   max-width: 700px;
 
   a {
-    background: #fff;
+    background: ${({ theme }: Theme) => theme.repo};
     border-radius: 5px;
     width: 100%;
     padding: 24px;
@@ -99,7 +146,7 @@ export const Repositories = styled.div`
       margin: 0 16px;
       strong {
         font-size: 20px;
-        color: #3d3d4d;
+        color: ${({ theme }: Theme) => theme.title_repo};
       }
 
       p {

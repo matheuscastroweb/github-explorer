@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useRouteMatch, Link } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { useRouteMatch, Link } from 'react-router-dom';
 
+import logoImgDark from '../../assets/logo-dark.svg';
 import logoImg from '../../assets/logo.svg';
+import { useTheme } from '../../hooks/theme';
 import api from '../../services/api';
 
 import { Header, RepositoryInfo, Issues } from './styles';
 
-interface IRepositoryParams {
+interface RepositoryParams {
   repository: string;
 }
 
-interface IRepository {
+interface Repository {
   full_name: string;
   description: string;
   stargazers_count: number;
@@ -23,7 +25,7 @@ interface IRepository {
   };
 }
 
-interface IIssue {
+interface Issue {
   id: number;
   title: string;
   html_url: string;
@@ -33,17 +35,20 @@ interface IIssue {
 }
 
 const Repository: React.FC = () => {
-  const { params } = useRouteMatch<IRepositoryParams>();
+  const { params } = useRouteMatch<RepositoryParams>();
 
-  const [repository, setRepository] = useState<IRepository | null>(null);
+  const [repository, setRepository] = useState<Repository | null>(null);
 
-  const [issues, setIssues] = useState<IIssue[]>([]);
+  const [issues, setIssues] = useState<Issue[]>([]);
+
+  const { theme } = useTheme();
 
   useEffect(() => {
-    async function loadData() {
+    async function loadData(): Promise<void> {
+      // eslint-disable-next-line no-shadow
       const [repository, issue] = await Promise.all([
-        api.get<IRepository>(`repos/${params.repository}`),
-        api.get<IIssue[]>(`repos/${params.repository}/issues`),
+        api.get<Repository>(`repos/${params.repository}`),
+        api.get<Issue[]>(`repos/${params.repository}/issues`),
       ]);
 
       setRepository(repository.data);
@@ -56,7 +61,10 @@ const Repository: React.FC = () => {
   return (
     <>
       <Header>
-        <img src={logoImg} alt="Github Explorer" />
+        <img
+          src={theme === 'light' ? logoImg : logoImgDark}
+          alt="Github Explorer"
+        />
         <Link to="/">
           <FiChevronLeft size={16} />
           Go back

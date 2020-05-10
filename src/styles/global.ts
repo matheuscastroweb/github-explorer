@@ -1,16 +1,23 @@
 import { createGlobalStyle } from 'styled-components';
-import githubBackground from '../assets/github-background.svg';
 
+interface Theme {
+  theme: {
+    body: string;
+    background: string;
+  };
+}
 export default createGlobalStyle`
 * {
   margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  transition: all 0.25s linear;
 }
 
 body {
-  background: #F0F0F5 url(${githubBackground}) no-repeat 70% top ;
+  background: url(${({ theme }: Theme) => theme.background}) no-repeat 70% top ;
+  background-color: ${({ theme }: Theme) => theme.body};
   -webkit-font-smoothing: antialiased;
 }
 

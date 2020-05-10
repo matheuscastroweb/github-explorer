@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+interface Theme {
+  theme: {
+    title: string;
+    error: string;
+    repo: string;
+    title_repo: string;
+  };
+}
+
 export const Header = styled.header`
   display: flex;
   align-items: center;
@@ -40,7 +49,7 @@ export const RepositoryInfo = styled.section`
 
       strong {
         font-size: 36px;
-        color: #3d3d4d;
+        color: ${({ theme }: Theme) => theme.title_repo};
       }
 
       p {
@@ -63,7 +72,7 @@ export const RepositoryInfo = styled.section`
       strong {
         display: block;
         font-size: 36px;
-        color: #3d3d4d;
+        color: ${({ theme }: Theme) => theme.title_repo};
       }
 
       span {
@@ -79,7 +88,7 @@ export const Issues = styled.div`
   margin-top: 40px;
 
   a {
-    background: #fff;
+    background: ${({ theme }: Theme) => theme.repo};
     border-radius: 5px;
     width: 100%;
     padding: 24px;
@@ -103,7 +112,7 @@ export const Issues = styled.div`
       margin: 0 16px;
       strong {
         font-size: 20px;
-        color: #3d3d4d;
+        color: ${({ theme }: Theme) => theme.title_repo};
       }
 
       p {
