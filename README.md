@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-Github explorer developed on GoStack 11
+Github explorer developed on GoStack 11 with extras
 </h4>
 
 <p align="center">
