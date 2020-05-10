@@ -20,6 +20,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 700px;
 
   a {
     display: flex;
@@ -37,15 +38,10 @@ export const Header = styled.header`
     width: 150px;
     height: 30px;
     background: ${({ theme }: Theme) => theme.mode};
-    border-radius: 5px;
     border: 0;
     font-weight: bold;
     color: ${({ theme }: Theme) => theme.title};
     transition: background-color 0.2s;
-    -webkit-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.1);
-
     &:hover {
       background: ${({ theme }: Theme) => shade(0.2, theme.mode)};
     }

@@ -19,7 +19,8 @@ const ThemeProviderApp: React.FC = ({ children }) => {
 
     if (themeStorage) {
       return themeStorage;
-    } else return 'light';
+    }
+    return 'dark';
   });
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const ThemeProviderApp: React.FC = ({ children }) => {
     if (themeStorage) {
       setTheme(themeStorage);
     } else {
-      setTheme('light');
+      setTheme('dark');
     }
   }, [theme]);
 

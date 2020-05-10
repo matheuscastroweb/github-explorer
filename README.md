@@ -25,7 +25,7 @@ Github explorer developed on GoStack 11
 <h2 align="left">
 Dashboard
 </h2>
- <img alt="Dashboard Github Explorer" title="Dashboard Github Explorer" src="https://res.cloudinary.com/matheuscastroweb/image/upload/v1589060517/github-explorer/dashboard_lkjzef.png" /><br>
+ <img alt="Dashboard Github Explorer" title="Dashboard Github Explorer" src="https://res.cloudinary.com/matheuscastroweb/image/upload/v1589079227/github-explorer/dashboard_agu19r.png" /><br>
 
  <h2 align="left">
 Repository
