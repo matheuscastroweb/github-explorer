@@ -12,7 +12,7 @@ export default createGlobalStyle`
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-  transition: all 0.25s linear;
+  transition: background-color 0.25s linear;
 }
 
 body {
