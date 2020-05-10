@@ -10,7 +10,7 @@ interface Theme {
     title: string;
     error: string;
     repo: string;
-    title_repo: string;
+    titleRepo: string;
     button: string;
     mode: string;
   };
@@ -142,7 +142,7 @@ export const Repositories = styled.div`
       margin: 0 16px;
       strong {
         font-size: 20px;
-        color: ${({ theme }: Theme) => theme.title_repo};
+        color: ${({ theme }: Theme) => theme.titleRepo};
       }
 
       p {

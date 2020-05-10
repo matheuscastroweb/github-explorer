@@ -5,7 +5,7 @@ interface Theme {
     title: string;
     error: string;
     repo: string;
-    title_repo: string;
+    titleRepo: string;
   };
 }
 
@@ -49,7 +49,7 @@ export const RepositoryInfo = styled.section`
 
       strong {
         font-size: 36px;
-        color: ${({ theme }: Theme) => theme.title_repo};
+        color: ${({ theme }: Theme) => theme.titleRepo};
       }
 
       p {
@@ -72,7 +72,7 @@ export const RepositoryInfo = styled.section`
       strong {
         display: block;
         font-size: 36px;
-        color: ${({ theme }: Theme) => theme.title_repo};
+        color: ${({ theme }: Theme) => theme.titleRepo};
       }
 
       span {
@@ -112,7 +112,7 @@ export const Issues = styled.div`
       margin: 0 16px;
       strong {
         font-size: 20px;
-        color: ${({ theme }: Theme) => theme.title_repo};
+        color: ${({ theme }: Theme) => theme.titleRepo};
       }
 
       p {
