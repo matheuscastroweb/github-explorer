@@ -49,6 +49,7 @@ This project was developed with the following technologies:
 - [axios](https://github.com/axios/axios)
 - [polished](https://polished.js.org/)
 - [styled-components](https://www.styled-components.com/)
+- [Context API](https://pt-br.reactjs.org/docs/context.html)
 - [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
 ## How To Use
